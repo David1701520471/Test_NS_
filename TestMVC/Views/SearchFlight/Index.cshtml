@@ -1,0 +1,66 @@
+﻿@model IEnumerable<TestMVC.Models.Flight.Flight>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="text-center">Search</h2>
+<br />
+<br />
+<form action="/SearchFlight/Search" method="get" class="row align-items-center" name="SearchFlight">
+    <div class="col-sm-3">
+        <label class="visually-hidden" for="specificSizeInputName">Origin</label>
+        <input type="text" class="form-control" name="Origin">
+    </div>
+    <div class="col-sm-3">
+        <label class="visually-hidden" for="specificSizeInputGroupUsername">Destination</label>
+        <div class="input-group">
+            <input type="text" class="form-control" name="Destination">
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <label class="visually-hidden" for="specificSizeInputGroupUsername">Date</label>
+        <div class="input-group">
+            <input type="text" name="Datepicker" id="Datepicker">
+        </div>
+    </div>
+    <div class="col-auto">
+        <input type="submit" class="btn btn-primary" name="submit" value="submit">
+    </div>
+</form>
+<br />
+<br />
+<table class="table">
+    <tr>
+        <th>
+            DepartureStation
+        </th>
+        <th>
+            ArrivalStation
+        </th>
+        <th>
+            DepartureDate
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Currency
+        </th>
+        <th></th>
+    </tr>
+
+</table>
+
+@section scripts
+{
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#Datepicker").datepicker({
+                dateFormat: "yy-mm-dd"
+            });
+        });
+    </script>
+}

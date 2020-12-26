@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TestMVC.Models.Flight.Flight>
+﻿@model IEnumerable<TestMVC.ExternalAPI.Response.ResAPI>
 
 @{
     ViewBag.Title = "Search";
@@ -6,9 +6,7 @@
 
 <h2>Search</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -19,6 +17,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.DepartureDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightNumber)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Price)
@@ -41,15 +42,16 @@
             @Html.DisplayFor(modelItem => item.DepartureDate)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.FlightNumber)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Currency)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) 
         </td>
     </tr>
 }

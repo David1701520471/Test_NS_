@@ -25,13 +25,12 @@ namespace TestMVC.Controllers
 
 
         [HttpGet]
-        public async Task<IEnumerable<ResAPI>> Search(string Origin,string Destination,string Datepicker)
+        public async Task<ActionResult> Search(string Origin,string Destination,string Datepicker)
         {
             try
             {
                 var response = await _api.Flight(Origin, Destination, Datepicker);
-                //Search how to list this in the view:v 
-                return response;
+                return View("Search", response);
             }
             catch(Exception ex)
             {

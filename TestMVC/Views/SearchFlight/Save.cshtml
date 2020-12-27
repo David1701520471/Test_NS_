@@ -1,0 +1,65 @@
+﻿@model TestMVC.Models.Flight.Flight
+
+@{
+    ViewBag.Title = "Save";
+}
+
+<h2>Save</h2>
+
+<div>
+    <h4>Flight</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartureStation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartureStation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrivalStation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrivalStation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartureDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartureDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FkTransport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FkTransport)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Currency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Currency)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Search", "Index") 
+</p>

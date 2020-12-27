@@ -23,8 +23,9 @@ namespace TestMVC
 
             // register all your components with the container here
             // it is NOT necessary to register your controllers
-            container.RegisterType<ExternalAPI.Interface.ApiInterface, ExternalAPI.Repository.ApiRepository>();
+            container.RegisterType<ExternalAPI.Interface.IAPI, ExternalAPI.Repository.ApiRepository>();
             container.RegisterType<IController, SearchFlightController>("SearchFlight");
+            container.RegisterType<DbAccess.Interface.IDbAcces, DbAccess.Repository.SqlServerRepository>();
       // e.g. container.RegisterType<ITestService, TestService>();    
       RegisterTypes(container);
 

@@ -237,15 +237,17 @@
     <Compile Include="Context\TestContext.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SearchFlightController.cs" />
-    <Compile Include="ExternalAPI\Interface\ApiInterface.cs" />
+    <Compile Include="DbAccess\Interface\IDbAccess.cs" />
+    <Compile Include="DbAccess\Repository\SqlServerRepository.cs" />
+    <Compile Include="ExternalAPI\Interface\IAPI.cs" />
     <Compile Include="ExternalAPI\Repository\ApiRepository.cs" />
     <Compile Include="ExternalAPI\Response\ResAPI.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202012262337535_Initial.cs" />
-    <Compile Include="Migrations\202012262337535_Initial.designer.cs">
-      <DependentUpon>202012262337535_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202012270444145_Initial.cs" />
+    <Compile Include="Migrations\202012270444145_Initial.designer.cs">
+      <DependentUpon>202012270444145_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Flight\Flight.cs" />
@@ -394,6 +396,7 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\SearchFlight\Search.cshtml" />
+    <Content Include="Views\SearchFlight\Save.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -410,8 +413,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202012262337535_Initial.resx">
-      <DependentUpon>202012262337535_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012270444145_Initial.resx">
+      <DependentUpon>202012270444145_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

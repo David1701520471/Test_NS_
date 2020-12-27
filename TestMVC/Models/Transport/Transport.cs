@@ -9,6 +9,7 @@ namespace TestMVC.Models.Transport
         }
 
         [Key]
+        [Required]
         public string FlightNumber { get; set; }
     }
 }

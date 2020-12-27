@@ -12,7 +12,7 @@ namespace TestMVC.Models.Flight
 
         }
         [Key]
-        public int Id { get; set; }
+        public string FlightCode { get; set; }
         [Required]
         public string DepartureStation { get; set; }
         [Required]
@@ -24,6 +24,7 @@ namespace TestMVC.Models.Flight
         [Required]
         public string FkTransport { get; set; }
         [Required]
+        [Display(Name = "Price")]
         public decimal Price { get; set; }
         [Required]
         public string Currency { get; set; }

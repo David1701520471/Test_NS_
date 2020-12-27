@@ -6,7 +6,7 @@ using TestMVC.ExternalAPI.Response;
 
 namespace TestMVC.ExternalAPI.Interface
 {
-    public interface ApiInterface
+    public interface IAPI
     {
         Task<IEnumerable<ResAPI>> GetFlightsFromApi(string FlightOrigin, string FlightDestination, string FlightDate);
 

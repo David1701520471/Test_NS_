@@ -11,7 +11,7 @@ using TestMVC.ExternalAPI.Response;
 
 namespace TestMVC.ExternalAPI.Repository
 {
-    public class ApiRepository : ApiInterface
+    public class ApiRepository : IAPI
     {
         readonly string baseUrl = "http://testapi.vivaair.com/otatest/api/values";
         public HttpClient Client { get; }
@@ -66,7 +66,7 @@ namespace TestMVC.ExternalAPI.Repository
             }
             catch(Exception ex)
             {
-                return null;
+                throw new Exception("Mensaje de error " + ex.Message);
             }
         }
     }

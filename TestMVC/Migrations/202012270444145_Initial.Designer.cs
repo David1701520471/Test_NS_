@@ -13,7 +13,7 @@ namespace TestMVC.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202012262337535_Initial"; }
+            get { return "202012270444145_Initial"; }
         }
         
         string IMigrationMetadata.Source

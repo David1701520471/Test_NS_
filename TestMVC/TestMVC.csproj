@@ -237,6 +237,8 @@
     <Compile Include="Context\TestContext.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SearchFlightController.cs" />
+    <Compile Include="DbAccess\Exceptions\FlightDataAlreadySavedException.cs" />
+    <Compile Include="DbAccess\Exceptions\MissingFlightDataException.cs" />
     <Compile Include="DbAccess\Interface\IDbAccess.cs" />
     <Compile Include="DbAccess\Repository\SqlServerRepository.cs" />
     <Compile Include="ExternalAPI\Interface\IAPI.cs" />

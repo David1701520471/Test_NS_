@@ -6,16 +6,19 @@ using TestMVC.Models.Flight;
 using TestMVC.DbAccess.Interface;
 using System.Web.Http;
 using System.Web.Mvc;
+using TestMVC.Models.SearchData;
+using TestMVC.Models.Search;
+using TestMVC.DbAccess.Exeptions;
 
 namespace TestMVC.Controllers
 {
     public class SearchFlightController : Controller
     {
-        
+
         private readonly IAPI _api;
         private readonly IDbAcces _dbAccess;
 
-        public SearchFlightController(IAPI api,IDbAcces dbAccess)
+        public SearchFlightController(IAPI api, IDbAcces dbAccess)
         {
             _api = api;
             _dbAccess = dbAccess;
@@ -28,17 +31,18 @@ namespace TestMVC.Controllers
         }
 
 
-        [System.Web.Mvc.HttpGet]
-        public async Task<ActionResult> Search(string Origin,string Destination,string Datepicker)
+        [System.Web.Http.HttpGet]
+        public async Task<ActionResult> Search([FromBody] SearchData searchData)
         {
             try
             {
-                var response = await _api.Flight(Origin, Destination, Datepicker);
+                var response = await _api.Flight(searchData.Origin, searchData.Destination, searchData.Datepicker);
                 return View("Search", response);
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                throw new Exception("Somethin happen: " + ex.Message);
+                throw new SearchMissedFieldException("Any field required for the search is missed" + ex.Message);
             }
         }
 
@@ -49,7 +53,7 @@ namespace TestMVC.Controllers
             {
 
                 Flight model = await _dbAccess.SaveFlight(flight);
-                return View("Save",model);
+                return View("Save", model);
             }
             catch (Exception ex)
             {

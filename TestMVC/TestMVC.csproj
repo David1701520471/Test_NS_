@@ -253,6 +253,8 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Flight\Flight.cs" />
+    <Compile Include="Models\SearchData\SearchData.cs" />
+    <Compile Include="Models\SearchData\SearchMissedFieldException.cs" />
     <Compile Include="Models\Transport\Transport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

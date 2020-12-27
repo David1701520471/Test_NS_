@@ -3,24 +3,30 @@
     ViewBag.Title = "Index";
 }
 
+
+
 <h2 class="text-center">Search</h2>
 <br />
 <br />
 <form action="/SearchFlight/Search" method="get" class="row align-items-center" name="SearchFlight">
+    <div asp-validation-summary="All" class="text-danger"></div>
     <div class="col-sm-3">
         <label class="visually-hidden" for="specificSizeInputName">Origin</label>
         <input type="text" class="form-control" name="Origin">
+        <span asp-validation-for="SearchData.Origin" class="text-danger"></span>
     </div>
     <div class="col-sm-3">
         <label class="visually-hidden" for="specificSizeInputGroupUsername">Destination</label>
         <div class="input-group">
             <input type="text" class="form-control" name="Destination">
+            <span asp-validation-for="SearchData.Destination" class="text-danger"></span>
         </div>
     </div>
     <div class="col-sm-3">
         <label class="visually-hidden" for="specificSizeInputGroupUsername">Date</label>
         <div class="input-group">
             <input type="text" name="Datepicker" id="Datepicker">
+            <span asp-validation-for="SearchData.Datepicker" class="text-danger"></span>
         </div>
     </div>
     <div class="col-auto">
@@ -44,3 +50,4 @@
         });
     </script>
 }
+

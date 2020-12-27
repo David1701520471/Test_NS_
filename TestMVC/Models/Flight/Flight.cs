@@ -22,6 +22,8 @@ namespace TestMVC.Models.Flight
         [ForeignKey("FkTransport")]
         public Transport.Transport Transport { get; set; }
         [Required]
+        public string FkTransport { get; set; }
+        [Required]
         public decimal Price { get; set; }
         [Required]
         public string Currency { get; set; }

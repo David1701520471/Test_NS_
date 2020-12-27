@@ -8,7 +8,6 @@ using System.Web.Http;
 using System.Web.Mvc;
 using TestMVC.Models.SearchData;
 using TestMVC.Models.Search;
-using TestMVC.DbAccess.Exeptions;
 
 namespace TestMVC.Controllers
 {
@@ -38,7 +37,6 @@ namespace TestMVC.Controllers
             {
                 var response = await _api.Flight(searchData.Origin, searchData.Destination, searchData.Datepicker);
                 return View("Search", response);
-
             }
             catch (Exception ex)
             {
